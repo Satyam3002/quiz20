@@ -162,17 +162,17 @@ export default function Quiz() {
     {/* Submit Button */}
     <div className="p-3 flex flex-col sm:flex-row items-center justify-between gap-2">
       <p className="font-semibold text-lg sm:text-base md:text-2xl">Quiz by Quiz20</p>
-      <button onClick={handleConfirmSubmit} className={`w-full sm:w-auto  py-2 text-sm md:text-xl px-20 sm:px-10 md:px-72 rounded-md ${darkMode ? "bg-customBlue" : "bg-customBlue"} text-white`}>
+      <button onClick={handleConfirmSubmit} className={`w-full sm:w-auto py-2 text-sm md:text-xl px-20 sm:px-10 md:px-72 rounded-md ${darkMode ? "bg-customBlue" : "bg-customBlue"} text-white`}>
         Submit
       </button>
     </div>
-
+  
     <div className="w-full bg-gray-200 h-2 rounded-full mt-2">
-    <div
-      className="bg-customBlue h-2 rounded-full transition-all duration-500"
-      style={{ width: `${((currentQuestion + 1) / questions.length) * 100}%` }}
-    ></div>
-  </div>
+      <div
+        className="bg-customBlue h-2 rounded-full transition-all duration-500"
+        style={{ width: `${((currentQuestion + 1) / questions.length) * 100}%` }}
+      ></div>
+    </div>
   
     {/* Quiz Container */}
     <div className="flex-grow flex flex-col justify-between p-4">
@@ -180,15 +180,15 @@ export default function Quiz() {
         {/* Question Number Indicator */}
         <p className="text-sm sm:text-base md:text-lg font-normal text-blue-700">
           {language === "en" ? "Question" : "प्रश्न"} {currentQuestion + 1} {language === "en" ? "out of" : "में से"} {questions.length}
-        </p> 
+        </p>
         <div className="flex justify-between items-center gap-2">
           <h2 className="text-base sm:text-lg font-semibold">{questions[currentQuestion].question[language]}</h2>
-          <div className="flex gap-2"> 
+          <div className="flex gap-2">
             <button onClick={toggleLanguage} className="w-8 h-8 sm:w-10 sm:h-10 bg-lightGray rounded-full flex items-center justify-center">
-              <img src="/translate.svg" alt="Translate" className="w-6 h-6 sm:w-8 sm:h-8" />      
+              <img src="/translate.svg" alt="Translate" className="w-6 h-6 sm:w-8 sm:h-8" />
             </button>
             <button onClick={handleShare} className="w-8 h-8 sm:w-10 sm:h-10 bg-lightGray rounded-full flex items-center justify-center">
-              <img src="/share.svg" alt="Translate" className="w-6 h-6 sm:w-8 sm:h-8" />      
+              <img src="/share.svg" alt="Translate" className="w-6 h-6 sm:w-8 sm:h-8" />
             </button>
           </div>
         </div>
@@ -217,7 +217,7 @@ export default function Quiz() {
     </div>
   
     {/* Navigation Buttons at the Bottom */}
-    <div className="flex gap-2 sm:gap-4 justify-between p-2 sm:p-4">
+    <div className="fixed bottom-0 left-0 right-0 flex gap-2 sm:gap-4 justify-between p-2 sm:p-4 bg-white">
       <button
         disabled={currentQuestion === 0}
         onClick={() => setCurrentQuestion(currentQuestion - 1)}
@@ -233,7 +233,7 @@ export default function Quiz() {
         {language === "en" ? "Next" : "अगला"}
       </button>
     </div>
-    
+  
     {/* Confirmation Modal */}
     {confirmSubmit && (
       <div className="fixed inset-0 bg-gray-600 bg-opacity-75 flex items-center justify-center z-50">
@@ -242,7 +242,7 @@ export default function Quiz() {
             {language === "en" ? "Submit Quiz?" : "क्या आप वाकई सबमिट करना चाहते हैं?"}
           </p>
           <p className="mb-4 text-sm sm:text-base text-black font-semibold">
-            {language === "en" ? ` Unattempted Questions: ${unattempted}` : ` अप्रयासित: ${unattempted}`}
+            {language === "en" ? `Unattempted Questions: ${unattempted}` : `अप्रयासित: ${unattempted}`}
           </p>
           <p className="text-sm sm:text-lg font-semibold mb-4 text-black">
             {language === "en" ? "Once submitted, you cannot modify your answers." : "सबमिट करने के बाद, आप अपने उत्तरों में संशोधन नहीं कर सकते।"}
@@ -259,6 +259,7 @@ export default function Quiz() {
       </div>
     )}
   </div>
+  
   
   );
 }
