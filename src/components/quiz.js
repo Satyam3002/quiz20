@@ -140,6 +140,8 @@ export default function Quiz() {
         unattempted={unattempted}
         totalQuestions={questions.length}
         onTryAgain={handleTryAgain}
+        questions={questions}
+        answers={answers}
       />
     );
   }
@@ -160,7 +162,7 @@ export default function Quiz() {
     {/* Submit Button */}
     <div className="p-3 flex flex-col sm:flex-row items-center justify-between gap-2">
       <p className="font-semibold text-lg sm:text-base md:text-2xl">Quiz by Quiz20</p>
-      <button onClick={handleConfirmSubmit} className={`w-full sm:w-auto sm:px-8 py-2 text-sm md:text-xl px-20 sm:px-10 md:px-72 rounded-md ${darkMode ? "bg-customBlue" : "bg-customBlue"} text-white`}>
+      <button onClick={handleConfirmSubmit} className={`w-full sm:w-auto  py-2 text-sm md:text-xl px-20 sm:px-10 md:px-72 rounded-md ${darkMode ? "bg-customBlue" : "bg-customBlue"} text-white`}>
         Submit
       </button>
     </div>
