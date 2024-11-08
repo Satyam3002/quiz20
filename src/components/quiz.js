@@ -166,6 +166,13 @@ export default function Quiz() {
         Submit
       </button>
     </div>
+
+    <div className="w-full bg-gray-200 h-2 rounded-full mt-2">
+    <div
+      className="bg-customBlue h-2 rounded-full transition-all duration-500"
+      style={{ width: `${((currentQuestion + 1) / questions.length) * 100}%` }}
+    ></div>
+  </div>
   
     {/* Quiz Container */}
     <div className="flex-grow flex flex-col justify-between p-4">

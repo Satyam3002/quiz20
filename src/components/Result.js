@@ -109,12 +109,12 @@ const Results = ({
 
       {/* Buttons */}
       <div className="flex gap-x-2 sm:gap-x-4 mt-4">
-        <button onClick={onTryAgain} className="px-3 py-2 bg-blue-500 text-white rounded-md text-sm sm:text-base">
+        <button onClick={onTryAgain} className="px-6 py-3 bg-black text-white rounded-md text-sm sm:text-base">
           Try Again
         </button>
         <button
           onClick={toggleShowAnswers}
-          className="px-3 py-2 bg-gray-500 text-white rounded-md text-sm sm:text-base"
+          className="px-6 py-3 bg-black text-white rounded-md text-sm sm:text-base"
         >
           {showAnswers ? "Hide Answers" : "Show Answers"}
         </button>
