@@ -60,7 +60,7 @@ export default function Quiz() {
   const [incorrect, setIncorrect] = useState(0);
   const [confirmSubmit, setConfirmSubmit] = useState(false);
   const [unattempted, setUnattempted] = useState(0);
-  const [language, setLanguage] = useState("en"); // "en" for English, "hi" for Hindi
+  const [language, setLanguage] = useState("en"); 
 
   useEffect(() => {
     if (timeLeft <= 0) {
@@ -90,14 +90,14 @@ export default function Quiz() {
     setCorrect(correctCount);
     setIncorrect(incorrectCount);
     setUnattempted(questions.length - correctCount - incorrectCount);
-    setShowResults(true); // Show results when submitted
+    setShowResults(true); 
   };
 
   const handleTryAgain = () => {
     setShowResults(false);
     setCurrentQuestion(0);
     setAnswers({});
-    setTimeLeft(60); // Reset time left
+    setTimeLeft(60); 
   };
 
   const handleShare = () => {
@@ -120,16 +120,16 @@ export default function Quiz() {
   };
 
   const handleConfirmSubmit = () => {
-    setConfirmSubmit(true); // Show confirmation modal
+    setConfirmSubmit(true); 
   };
 
   const handleConfirmYes = () => {
     setConfirmSubmit(false);
-    handleSubmit(); // Proceed with submit
+    handleSubmit(); 
   };
 
   const handleConfirmNo = () => {
-    setConfirmSubmit(false); // Close modal
+    setConfirmSubmit(false); 
   };
 
   if (showResults) {
@@ -202,13 +202,13 @@ export default function Quiz() {
                 answers[currentQuestion] === option ? "border-4 border-blue-500 pl-3 sm:pl-4" : "border-white"
               } ${darkMode ? "text-white" : "text-black"}`}
             >
-              {/* Gray fill effect */}
+              
               {answers[currentQuestion] === option && <span className="absolute inset-0 bg-gray-300 animate-fill"></span>}
-              {/* Circular button for alphabet */}
+             
               <span className="flex items-center justify-center w-8 sm:w-10 bg-customGray h-8 sm:h-10 mr-2 sm:mr-3 rounded-full text-center font-bold text-black">
-                {String.fromCharCode(65 + index)} {/* A, B, C, etc. */}
+                {String.fromCharCode(65 + index)} 
               </span>
-              {/* Answer text */}
+             
               <span>{option}</span>
             </button>
           ))}
